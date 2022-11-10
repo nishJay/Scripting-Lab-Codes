@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Bakery
+        </title>
+    </head>
+    <body>
+        <h1>Bakery</h1>
+        
+        <script lang="JavaScript">
+        a=0;
+        
+        function popup(id)
+        {
+            a=prompt("Enter quantity");
+            document.getElementById(id).innerHTML=a;
+            //alert(<input type="text">);
+            bill(id);
+        }
+        function bill(id)
+        {
+            document.getElementById(id+'bill').innerHTML=a;
+            val1=10;
+            console.log(val1);
+            console.log(a);
+            res=a*val1;
+            document.getElementById(id+'total').innerHTML=res;
+        }
+        function totalAmt()
+        {
+            sum=0;
+            var table=document.getElementById('table');
+            var n = table.rows.length;
+            for (let i = 1; i < n-1; i++) {
+                sum+=parseInt(table.rows[i].cells[3].innerHTML);
+            }
+            document.getElementById('TotalBill').innerHTML=sum;
+            
+        }
+        </script>
+        <button onclick="popup('bread')"><img src="bread.jpeg"></button>
+        <p>
+            Current quantity ordered:<span id="bread">0</span>
+        </p><button onclick="popup('puff')"><img src="puff.jpeg"></button>
+        <p>
+            Current quantity ordered:<span id="puff">0</span>
+        </p>
+        <p><button onclick="totalAmt()">Generate bill</button></p>
+        <table border="2" cellspacing="1" cellpadding="5" id='table'>
+            <tr>
+                <th>Item name</th>
+                <th>Quantity</th>
+                <th>Price for 1 piece</th>
+                <th>Total price</th>
+            </tr>
+            <tr>
+                <td>Bread</td>
+                <td><span id='breadbill'>0</td>
+                <td><span id='bread1'>10</td>
+                <td id='breadtotal'>0</td>
+            </tr>
+            <tr>
+                <td>Puff</td>
+                <td><span id='puffbill'>0</td>
+                <td><span id='puff1'>10</td>
+                <td id='pufftotal'>0</td>
+            </tr>
+            <tr>
+                <td colspan="3">Total amount</td>
+                <td><span id="TotalBill">0</td>
+            </tr>
+        </table>
+    </body>
+</html>
