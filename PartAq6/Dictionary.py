@@ -1,0 +1,3 @@
+from Atomic import *
+
+AtomicDictionary()
