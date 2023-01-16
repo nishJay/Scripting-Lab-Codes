@@ -5,15 +5,12 @@ descending order of number of vowels in the string"""
 
 
 class ulta:
-    def __init__(self):
-        self.line = ""
-
-    def rev(self):
-        li = self.line.split()
-        return " ".join(reversed(li))
+    line =""
+    def __init__(self, line):
+        self.line = " ".join(reversed(line))
 
 
-ob = [ulta(), ulta(), ulta()]
+ob = []
 
 print("Enter 3 strings")
 
@@ -21,8 +18,8 @@ st = ["", "", ""]
 co = [0, 0, 0]
 dict = {}
 for i in range(3):
-    ob[i].line = input()
-    st[i] = ob[i].rev()
+    ob.append(ulta(input()))
+    st[i]=ob[i].line
     for j in st[i]:
         if j.lower() in ['a', 'e', 'i', 'o', 'u']:
             co[i] += 1
@@ -30,4 +27,4 @@ for i in range(3):
     dict.update({st[i]: co[i]})
 print(st)
 print(dict)
-print(sorted(dict,key=lambda x:x[1]))
+print(sorted(dict.items(),key=lambda x:x[1],reverse=True))
