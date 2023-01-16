@@ -1,0 +1,43 @@
+<!-- Javascript: Design a HTML page to accept a string in a text box on the click of a button. Use
+Javascript to perform the following operations
+a. Add the string received to a pre-existing Javascript array named “Original_String”
+at its beginning
+b. For each array element, use a callback function and store each one’s length in a
+new array named “MyLength”
+29
+c. Write a Javascript function that takes the arrays “Original_String” and
+“MyLength” as argument. This function filters those strings with length less than
+or equal to 3. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Question 7</title>
+</head>
+<body>
+    <script>
+        MyLength=[];
+        Original_String=["hello","wru","iam here"]
+        function update(arr1,arr2)
+        {   Filtered=[];
+            for(i=0;i<arr2.length;i++)
+                if(arr2[i]<=3)
+                    Filtered.push(arr1[i]);
+            document.getElementById('new').innerHTML=Filtered;
+        }
+        function caller()
+        {
+            Original_String.unshift(document.getElementById('text').value)
+            for( i=0;i<Original_String.length;i++)
+                MyLength[i]=Original_String[i].length;
+            document.getElementById('out').innerHTML="Original_String:"+Original_String+"<br>MyLength:"+MyLength;
+            update(Original_String,MyLength);
+        }
+    </script>
+    <h1>Question 7</h1>
+    Text:<input type="text" id="text">
+    <input type="button" onclick="caller()" value="submit"><br>
+    Result:<br><span id="out"></span><br>
+    Filtered:<span id="new"></span>
+</body>
+</html>
