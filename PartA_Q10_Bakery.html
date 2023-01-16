@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <title>
+           RET Bakery
+        </title>   
+        <link rel="icon" type="image/x-icon" herf="fevicol.ico">
+    </head>
+    <body>
+        <h1 align= "center">Welcome to RET</h1>
+        <h2>Select the desired Item to buy:</h2><br>
+        <table border="1" cellspacing="1"  cellpadding="10">
+            <tr>
+                <td>
+        <h3>Item 1:</h3>
+        <img src="choco cake.jpeg" alt="Chocolate cake"style="width:250px;height:250px;"><br>
+        Item Name :<b>Chocolate Cake</b>  <br>
+        Item Price : <b>₹25</b><br>
+        <form>
+            <label>Item Quantity :</label>
+            <select id="i1">
+                <option value="0">
+                    0
+                </option>
+                <option value="1">
+                    1
+                </option>
+                <option value="2">
+                    2
+                </option>
+                <option value="5">
+                    5
+                </option>
+            </select>
+        </form>
+        </td>
+        <td>
+        <h3>Item 2:</h3>
+        <img src="vinilla cake.jpeg" alt="Vanilla cake"style="width:250px;height:250px;"><br>
+        Item Name :<b>Vanilla Cake</b>  <br>
+        Item Price : <b>₹20</b><br>
+        <form>
+            <label>Item Quantity :</label>
+            <select id="i2">
+                <option value="0">
+                    0
+                </option>
+                <option value="1">
+                    1
+                </option>
+                <option value="2">
+                    2
+                </option>
+                <option value="5">
+                    5
+                </option>
+            </select>
+        </form></td>
+        </tr>
+        </table>
+        <br><hr>
+
+
+
+        <input type ="button" onclick="calculate()" value="Submit"/><br><br><br>
+
+        <p>Total No of Items =<span id=result>None </span>
+        <p>Total price = ₹<span id=result1>0</span>
+        
+
+        <script>
+            function  calculate(){
+                var x1 = document.getElementById('i1').selectedOptions[0].value;
+                var x2 = document.getElementById('i2').selectedOptions[0].value;
+                if(x1!=0||x2!=0){
+                    y=25*x1+20*x2
+                    document.getElementById("result").innerHTML=parseInt(x1)+parseInt(x2);
+                    document.getElementById("result1").innerHTML=y;
+                }
+                    
+            }
+        </script>
+    </body>
+</html>
